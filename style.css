@@ -7,21 +7,35 @@
 body{
     height: 100vh;
     background-color: blue;
+    display: flex;
 }
 
 .memory-game{
     width: 640px;
+    margin: auto;
     height: 640px;
     display: flex;
     flex-wrap: wrap;
     border: 2px solid lime;
 }
 
+
 .memory-card{
     width: calc(25% - 10px);
     height: calc(33.333% -10px);
     position: relative;
     margin: 5px;
+    transform: scale(1);
+}
+
+.memory-card:active{
+    /*to give the effect of the cards being clicked*/
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card:flip{
+    transform: rotateY(180deg);
 }
 
 .front-face,
